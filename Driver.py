@@ -2,23 +2,27 @@ from EntryModel import EntryModel
 
 
 def print_help():
+    """Prints a list of commands."""
     print 'help : gives a list of commands'
     print 'exit : terminates app'
     print 'write [username]/[message] : writes a message as the username given'
 
 
 def print_all_messages(messages):
+    """Prints all messages currently stored in memory."""
     for message in messages:
         print message.to_string()
 
 
 def create_initial_messages():
+    """Creates initial data in memory. Used for testing."""
     test_message_a = EntryModel("Donald Trump", "Make America Great Again")
     test_message_b = EntryModel("Raymond Wu", "Sounds like a great idea!")
     return [test_message_a, test_message_b]
 
 
 def guest_book_driver():
+    """Main loop of project. """
     messages = create_initial_messages()
     print 'Welcome to mediocre guestbook app. Enter "help" for instructions.'
     while True:
